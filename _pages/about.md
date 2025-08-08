@@ -9,9 +9,10 @@ profile:
   image: prof_pic_test.jpg
   image_circular: true # crops the image to make it circular
 
-more_info: >
-  <p>ml2762[at]cornell.edu</p>
-  <p><a href="https://www.linkedin.com/in/kiara-liu-827466155/" target="_blank">LinkedIn</a></p>
+more_info: |
+  **Contact**
+  - ml2762[at]cornell.edu
+  - [LinkedIn](https://www.linkedin.com/in/kiara-liu-827466155/)
 
 news: true # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
