@@ -9,10 +9,10 @@ profile:
   image: prof_pic_test.JPG
   image_circular: true # crops the image to make it circular
   more_info: |
-    ml2762[at]cornell.edu
-    [LinkedIn](https://www.linkedin.com/in/kiara-liu-827466155/)
-    [GitHub] (https://github.com/kiara-mh-liu)
-    [StoryGraph] (https://app.thestorygraph.com/profile/imprimere)
+    ml2762[at]cornell.edu  
+    [LinkedIn](https://www.linkedin.com/in/kiara-liu-827466155/)  
+    [GitHub] (https://github.com/kiara-mh-liu)  
+    [StoryGraph] (https://app.thestorygraph.com/profile/imprimere)  
 
 news: true # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
