@@ -1,81 +1,27 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
+title: webnovels
+description: Exploring gendered characterization in Chinese webnovels
 img: assets/img/3.jpg
 importance: 2
 category: work
-giscus_comments: true
+related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+My current research focuses on using LLMs to explore how characters are gendered in different subgenres of Chinese webnovels.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## What are webnovels?
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+Webnovels are novels published on the web. They belong to the larger category of electronic literature, which Katherine Hayles defines as being "'digital born' (..) and (usually) meant to be read on a computer," or more recently mobile devices. In Chinese, the term is 网络文学 (lit. Internet literature), shortened into 网文 (lit. web-lit). Technically, any kind of literature, such as poems or creative nonfiction, would count as 网文/web-lit, but in everyday speech, 网文/web-lit refers almost exclusively to novel serializations. As such, "webnovels" have caught on as the most common translation.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+## Why webnovels?
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+There's A LOT of them (over 42 million works as of the end of 2024, although I have no idea how they even tried to count this). And they sometimes feature marginalized narratives that can't easily be published in print in the PRC. 
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+Print publication in China relies on the Standard Book Number system, which "grants book number rights exclusively to state-owned entities linked to the Communist Party, who then sell these numbers to private publishers." Each year, a limited number of book numbers are allocated to state-owned publishing organizations. Private publishers must pay these state-owned organizations to purchase not only book numbers, but also censorship services. 
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+Content-wise, the State Administration of Press, Publication, Radio, Film, and Television (SAPPRFT) releases general policies on prohibited subjects and content. In practice, censorship rules are much vaguer and change year-to-year. Most pertinent to my personal interest is the censorship of queer intimacies.
 
-{% raw %}
+Webnovels are subject to censorship as well, but to a lesser extent. Further, because anyone can publish a webnovel series online, webnovels capture a less filtered version of Chinese contemporary fiction, and I think that would be really interesting to explore.
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
-
-{% endraw %}
+However, in recent years, as webnovels rose in popularity, they have been facing much stricter censorship than before. I hope I'll be able to explore and quantify this in my future research!
