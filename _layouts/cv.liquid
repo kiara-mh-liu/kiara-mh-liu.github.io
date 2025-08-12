@@ -1,117 +1,79 @@
 ---
 layout: default
+title: CV
+# Provide just the filename if it's in assets/pdf/, or a full/absolute URL otherwise
+cv_pdf: cv.pdf
+# Optional short blurb under the title
+# description: Curriculum Vitae (PDF)
 ---
-{% unless site.data.resume %}
-  <div class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        {{ page.title }}
-        {% if page.cv_pdf %}
-          <a
-            href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url}}"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="float-right"
-            ><i class="fa-solid fa-file-pdf"></i
-          ></a>
-        {% endif %}
-      </h1>
-      {% if page.description %}
-        <p class="post-description">{{ page.description }}</p>
-      {% endif %}
-    </header>
 
-    <article>
-      <div class="cv">
-        {% for entry in site.data.cv %}
-          <a class="anchor" id="{{ entry.title }}"></a>
-          <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">{{ entry.title }}</h3>
-            <div>
-              {% if entry.type == 'list' %}
-                {% include cv/list.liquid %}
-              {% elsif entry.type == 'map' %}
-                {% include cv/map.liquid %}
-              {% elsif entry.type == 'nested_list' %}
-                {% include cv/nested_list.liquid %}
-              {% elsif entry.type == 'time_table' %}
-                {% include cv/time_table.liquid %}
-              {% elsif entry.type == 'list_groups' %}
-                {% include cv/list_groups.liquid %}
-              {% else %}
-                {{ entry.contents }}
-              {% endif %}
-            </div>
+{%- comment -%}
+Al-Folio–styled CV page that ONLY embeds a PDF (no list-based CV). Matches the
+header structure and card aesthetics from the theme’s CV page you shared.
+{%- endcomment -%}
+
+{%- assign _raw = page.cv_pdf | default: site.cv_pdf | default: 'cv.pdf' -%}
+{%- assign _is_absolute = _raw contains '://' or _raw startswith '/' -%}
+{%- if _is_absolute -%}
+  {%- assign pdf_path = _raw -%}
+{%- else -%}
+  {%- assign pdf_path = _raw | prepend: 'assets/pdf/' | relative_url -%}
+{%- endif -%}
+
+<div id="cv-embed-page" class="post cv-only">
+  <header class="post-header">
+    <h1 class="post-title">
+      {{ page.title }}
+      <a
+        href="{{ pdf_path }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="float-right"
+        title="Open PDF in new tab"
+      >
+        <i class="fa-solid fa-file-pdf"></i>
+      </a>
+    </h1>
+    {%- if page.description -%}
+      <p class="post-description">{{ page.description }}</p>
+    {%- endif -%}
+  </header>
+
+  <article>
+    <div class="cv">
+      <div class="card mt-3 p-0">
+        <!-- PDF Embed -->
+        <object
+          data="{{ pdf_path }}#view=FitH"
+          type="application/pdf"
+          class="pdf-embed"
+        >
+          <iframe
+            src="{{ pdf_path }}#view=FitH"
+            class="pdf-embed"
+            title="CV PDF"
+          ></iframe>
+          <div class="p-3">
+            Your browser can’t display embedded PDFs. You can
+            <a href="{{ pdf_path }}">download the CV here</a>.
           </div>
-        {% endfor %}
-      </div>
-    </article>
-  </div>
-{% else %}
-  <div class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        {{ page.title }}
-        {% if page.cv_pdf %}
-          <a
-            href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url}}"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="float-right"
-            ><i class="fa-solid fa-file-pdf"></i
-          ></a>
-        {% endif %}
-      </h1>
-      {% if page.description %}
-        <p class="post-description">{{ page.description }}</p>
-      {% endif %}
-    </header>
+        </object>
 
-    <article>
-      <div class="cv">
-        {% for data in site.data.resume %}
-          {% if site.jsonresume and site.jsonresume.size > 0 %}
-            {% unless site.jsonresume contains data[0] %}
-              {% continue %}
-            {% endunless %}
-          {% endif %}
-          {% if data[0] == 'meta' or data[1].size == 0 %} {% continue %} {% endif %}
-          <a class="anchor" id="{{ data[0] }}"></a>
-          <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">{{ data[0] | capitalize }}</h3>
-            <div>
-              {% case data[0] %}
-                {% when 'basics' %}
-                  {% include resume/basics.liquid %}
-                {% when 'education' %}
-                  {% include resume/education.liquid %}
-                {% when 'work' %}
-                  {% include resume/work.liquid %}
-                {% when 'volunteer' %}
-                  {% include resume/volunteer.liquid %}
-                {% when 'projects' %}
-                  {% include resume/projects.liquid %}
-                {% when 'awards' %}
-                  {% include resume/awards.liquid %}
-                {% when 'skills' %}
-                  {% include resume/skills.liquid %}
-                {% when 'publications' %}
-                  {% include resume/publications.liquid %}
-                {% when 'languages' %}
-                  {% include resume/languages.liquid %}
-                {% when 'interests' %}
-                  {% include resume/interests.liquid %}
-                {% when 'certificates' %}
-                  {% include resume/certificates.liquid %}
-                {% when 'references' %}
-                  {% include resume/references.liquid %}
-                {% else %}
-
-              {% endcase %}
-            </div>
+        <!-- Action row (matches al-folio card spacing/typography) -->
+        <div class="p-3 border-top d-flex justify-content-between align-items-center">
+          <div class="small text-muted">PDF last updated: {{ page.cv_updated | default: site.cv_updated | default: '' }}</div>
+          <div class="btn-row">
+            <a class="btn btn-sm" href="{{ pdf_path }}" download>
+              <i class="fa-solid fa-arrow-down"></i>
+              <span class="ml-1">Download</span>
+            </a>
+            <a class="btn btn-sm" href="{{ pdf_path }}" target="_blank" rel="noopener">
+              <i class="fa-solid fa-up-right-from-square"></i>
+              <span class="ml-1">Open in new tab</span>
+            </a>
           </div>
-        {% endfor %}
+        </div>
       </div>
-    </article>
-  </div>
-{% endunless %}
+    </div>
+  </article>
+</div>
