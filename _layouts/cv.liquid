@@ -8,17 +8,17 @@ layout: default
       {{ page.title }}
       {% if page.cv_pdf %}
         <a
-            {% if page.cv_pdf contains '://' %}
-              href="{{ page.cv_pdf }}"
-            {% else %}
-              href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}"
-            {% endif %}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="float-right"
-          >
-            <i class="fa-solid fa-file-pdf"></i>
-          </a>
+          {% if page.cv_pdf contains '://' %}
+            href="{{ page.cv_pdf }}"
+          {% else %}
+            href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}"
+          {% endif %}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="float-right"
+        >
+          <i class="fa-solid fa-file-pdf"></i>
+        </a>
       {% endif %}
     </h1>
     {% if page.description %}
@@ -27,11 +27,16 @@ layout: default
   </header>
 
   {% if page.cv_pdf %}
+  {% if page.cv_pdf contains '://' %}
+    {% assign pdf_path = page.cv_pdf %}
+  {% else %}
+    {% assign pdf_path = page.cv_pdf | prepend: 'assets/pdf/' | relative_url %}
+  {% endif %}
   <!-- Full-bleed PDF embed -->
-  <object data="{{ page.cv_pdf }}" type="application/pdf" style="position:fixed; top:120px; left:0; width:100vw; height:calc(100vh - 120px); border:0; margin:0; padding:0;">
-    <iframe src="{{ page.cv_pdf }}" style="position:fixed; top:120px; left:0; width:100vw; height:calc(100vh - 120px); border:0;" title="CV PDF"></iframe>
+  <object data="{{ pdf_path }}" type="application/pdf" style="position:fixed; top:120px; left:0; width:100vw; height:calc(100vh - 120px); border:0; margin:0; padding:0;">
+    <iframe src="{{ pdf_path }}" style="position:fixed; top:120px; left:0; width:100vw; height:calc(100vh - 120px); border:0;" title="CV PDF"></iframe>
     <div style="position:fixed; top:120px; left:0; width:100vw; height:calc(100vh - 120px); display:flex; align-items:center; justify-content:center; padding:1rem; font-family:system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;">
-      Your browser can’t display embedded PDFs. <a href="{{ page.cv_pdf }}" style="margin-left:0.4rem;">Download the PDF</a>.
+      Your browser can’t display embedded PDFs. <a href="{{ pdf_path }}" style="margin-left:0.4rem;">Download the PDF</a>.
     </div>
   </object>
   {% endif %}
