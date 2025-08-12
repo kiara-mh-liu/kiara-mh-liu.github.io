@@ -1,16 +1,6 @@
 ---
 layout: default
-title: CV
-# Provide just the filename if it's in assets/pdf/, or a full/absolute URL otherwise
-cv_pdf: cv.pdf
-# Optional short blurb under the title
-# description: Curriculum Vitae (PDF)
 ---
-
-{%- comment -%}
-Al-Folio–styled CV page that ONLY embeds a PDF (no list-based CV). Matches the
-header structure and card aesthetics from the theme’s CV page you shared.
-{%- endcomment -%}
 
 {%- assign _raw = page.cv_pdf | default: site.cv_pdf | default: 'cv.pdf' -%}
 {%- assign _is_absolute = _raw contains '://' or _raw startswith '/' -%}
@@ -20,60 +10,39 @@ header structure and card aesthetics from the theme’s CV page you shared.
   {%- assign pdf_path = _raw | prepend: 'assets/pdf/' | relative_url -%}
 {%- endif -%}
 
-<div id="cv-embed-page" class="post cv-only">
+<div class="post">
   <header class="post-header">
     <h1 class="post-title">
       {{ page.title }}
-      <a
-        href="{{ pdf_path }}"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="float-right"
-        title="Open PDF in new tab"
-      >
-        <i class="fa-solid fa-file-pdf"></i>
-      </a>
+      {% if page.cv_pdf %}
+        <a
+          href="{{ pdf_path }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="float-right"
+        ><i class="fa-solid fa-file-pdf"></i></a>
+      {% endif %}
     </h1>
-    {%- if page.description -%}
+    {% if page.description %}
       <p class="post-description">{{ page.description }}</p>
-    {%- endif -%}
+    {% endif %}
   </header>
 
   <article>
     <div class="cv">
-      <div class="card mt-3 p-0">
-        <!-- PDF Embed -->
-        <object
-          data="{{ pdf_path }}#view=FitH"
-          type="application/pdf"
-          class="pdf-embed"
-        >
-          <iframe
-            src="{{ pdf_path }}#view=FitH"
-            class="pdf-embed"
-            title="CV PDF"
-          ></iframe>
-          <div class="p-3">
-            Your browser can’t display embedded PDFs. You can
-            <a href="{{ pdf_path }}">download the CV here</a>.
-          </div>
-        </object>
-
-        <!-- Action row (matches al-folio card spacing/typography) -->
-        <div class="p-3 border-top d-flex justify-content-between align-items-center">
-          <div class="small text-muted">PDF last updated: {{ page.cv_updated | default: site.cv_updated | default: '' }}</div>
-          <div class="btn-row">
-            <a class="btn btn-sm" href="{{ pdf_path }}" download>
-              <i class="fa-solid fa-arrow-down"></i>
-              <span class="ml-1">Download</span>
-            </a>
-            <a class="btn btn-sm" href="{{ pdf_path }}" target="_blank" rel="noopener">
-              <i class="fa-solid fa-up-right-from-square"></i>
-              <span class="ml-1">Open in new tab</span>
-            </a>
-          </div>
+      {% if page.cv_pdf %}
+        <div class="card mt-3 p-0">
+          <object data="{{ pdf_path }}#view=FitH" type="application/pdf" class="w-100" style="height:85vh;">
+            <iframe src="{{ pdf_path }}#view=FitH" class="w-100" style="height:85vh;" title="CV PDF"></iframe>
+            <div class="p-3">
+              Your browser can’t display embedded PDFs. You can
+              <a href="{{ pdf_path }}">download the CV here</a>.
+            </div>
+          </object>
         </div>
-      </div>
+      {% else %}
+        <p>No CV PDF specified for this page.</p>
+      {% endif %}
     </div>
   </article>
 </div>
