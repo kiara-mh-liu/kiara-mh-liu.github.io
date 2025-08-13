@@ -1,7 +1,7 @@
 ---
 layout: page
 title: PiTech
-description: Evaluating machine translation quality for the City of New York
+description: evaluating machine translation quality for the City of New York
 img: assets/img/mtl.jpg
 importance: 1
 category: work
