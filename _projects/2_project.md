@@ -2,7 +2,7 @@
 layout: page
 title: webnovels
 description: exploring gendered characterization in Chinese webnovels
-img: assets/img/3.jpg
+img: assets/img/tka.jpeg
 importance: 1
 category: work
 related_publications: true
