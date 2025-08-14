@@ -21,12 +21,12 @@ social: false # includes social icons at the bottom of the page
 
 Hey there ^^ I am Kiara Liu, a Ph.D. student at the [Culture and Computation Lab](https://c2l.infosci.cornell.edu/), Cornell Information Science. I am advised by [Matthew Wilkens](https://infosci.cornell.edu/content/wilkens). 
 
-I approach digital humanities from two angles: the method of computational text analysis and the object of digital texts. I am specifically interested in Chinese and global queer web fictions.
+I approach digital humanities from two angles: the method of computational text analysis and the object of digital texts. I am specifically interested in Chinese and global queer web fictions, as well as texts in translation.
 
-Some projects that I am/have been working on:
+Some [projects](https://kiara-mh-liu.github.io/projects/) that I am/have been working on:
 - Exploring how characters are gendered in different subgenres of Chinese web novels
 - Using LLMs to clean up transcription errors in digitized archives of historical English texts
 - Recommending best practices for evaluating and using machine translation tools for the City of New York
 
 
-When I'm not working with LLMs, I enjoy reading, writing, and translating. Find my translation work at \[TK\]
+When I'm not working with LLMs, I enjoy reading, writing, and translating. Find my creative work [here](https://kiara-mh-liu.github.io/projects/5_project/).

@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2024-12-30 15:59:00-0400
+date: 2024-06-23 15:59:00-0400
 inline: true
 related_posts: false
 ---
 
-Presented mini-project on reader stereotypes for INFO 6310
+Presented "Co-creation: Hybrid Identities and Transient Worlds in _Zero Degrees of Separation_" as part of a panel at ACCL 2024
