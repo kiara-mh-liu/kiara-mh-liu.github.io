@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Finished PiTech Impact Fellowship with OTI! Check out my blog post.
+Finished PiTech project with [OTI](https://www.nyc.gov/content/oti/pages/)! Check out my [blog post]({% post_url 2025-09-30-pitech %}).

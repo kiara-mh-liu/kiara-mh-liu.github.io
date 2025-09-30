@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Excited to begin PiTech Impact Fellowship with OTI!
+Received [Siegel PiTech PhD Impact Fellowship](https://www.pi.tech.cornell.edu/pitech-phd-impact-fellowship)

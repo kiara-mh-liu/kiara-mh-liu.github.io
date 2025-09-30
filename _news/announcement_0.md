@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Presented "Co-creation: Hybrid Identities and Transient Worlds in _Zero Degrees of Separation_" as part of a panel at ACCL 2024
+Presented "Co-creation: Hybrid Identities and Transient Worlds in _Zero Degrees of Separation_" as part of a panel at [ACCL 2024](https://www.chineseandcomparativelit.org/2024-conference-386172418026371.html)
