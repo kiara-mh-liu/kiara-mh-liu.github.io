@@ -7,4 +7,4 @@ importance: 1
 category: fun
 ---
 
-(page under construction)
+(page under construction - for the short version, check out the final page of my [CV](% link _projects/5_project.md %)?)
