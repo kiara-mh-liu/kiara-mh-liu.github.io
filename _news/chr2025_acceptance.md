@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Paper on using LLMs for cleaning up archived historical English texts accepted to [CHR 2025](https://2025.computational-humanities-research.org/) 🎉
+Paper on [using LLMs for cleaning up archived historical English texts](https://anthology.ach.org/volumes/vol0003/zero-shot-methods-for-historical-text-restoration/10.63744@gz3Wm6kr19yr.pdf) accepted to CHR 2025 🎉
