@@ -12,6 +12,10 @@ related_publications: true
 
 My current research focuses on using LLMs to explore how characters are gendered in different subgenres of Chinese webnovels.
 
+As I trudge along the research process, please check out the [slidedeck](https://docs.google.com/presentation/d/1_mkTJrUyoi6ody1LKDGivSXa7JOenfIFtLtUf2FWlrg/edit?usp=sharing) I prepared for my informal presentation for Cornell's EastAsia+ Colloquium, November 2025.
+
+Please also check out [class materials](https://drive.google.com/drive/folders/1fXWlJG5LL4c3i_AkdJ-qcQwXXgV4-FnP?usp=sharing) (slides and pre-lecture activity) I prepared for a lecture I led for Cornell's Genres, Platforms, Media class, Fall 2024. 
+
 ### What are webnovels?
 
 Webnovels are novels published on the web. They belong to the larger category of electronic literature, which Katherine Hayles defines as being "'digital born' ... and (usually) meant to be read on a computer" {% cite hayles_electronic_2008 %}, or more recently mobile devices. In Chinese, the term is 网络文学 (lit. Internet literature), shortened into 网文 (lit. web-lit). Technically, any kind of literature, such as poems or creative nonfiction, would count as 网文/web-lit. In everyday speech, however, 网文/web-lit refers almost exclusively to novel serializations. As such, "webnovels" have caught on as the most common translation.
